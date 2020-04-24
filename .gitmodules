@@ -1,3 +1,6 @@
 [submodule "/home/sam/.vim/bundle/Vundle.vim"]
 	path = /home/sam/.vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "/home/sam/.vim/bundle/command-t"]
+	path = /home/sam/.vim/bundle/command-t
+	url = https://github.com/wincent/command-t.git
