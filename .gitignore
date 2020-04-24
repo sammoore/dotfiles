@@ -1,0 +1,9 @@
+*
+*.*
+.*
+
+!.gitignore
+!.bash_profile
+!.zshrc
+!.vimrc
+!.tmux.conf
