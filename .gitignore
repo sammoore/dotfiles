@@ -1,9 +1,13 @@
-*
-*.*
-.*
+/*
+/.*
 
 !.gitignore
 !.bash_profile
 !.zshrc
+
 !.vimrc
+!.vim/
+.vim/*
+!.vim/bundle/
+
 !.tmux.conf
