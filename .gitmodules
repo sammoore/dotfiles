@@ -7,3 +7,6 @@
 [submodule "/home/sam/.vim/bundle/syntastic"]
 	path = /home/sam/.vim/bundle/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "/home/sam/.vim/bundle/nerdtree"]
+	path = /home/sam/.vim/bundle/nerdtree
+	url = https://github.com/preservim/nerdtree.git
