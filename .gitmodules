@@ -10,3 +10,6 @@
 [submodule "/home/sam/.vim/bundle/nerdtree"]
 	path = /home/sam/.vim/bundle/nerdtree
 	url = https://github.com/preservim/nerdtree.git
+[submodule "/home/sam/.vim/bundle/vim-polyglot"]
+	path = /home/sam/.vim/bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot

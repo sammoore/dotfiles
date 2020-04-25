@@ -10,6 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'wincent/command-t'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'preservim/nerdtree'
+Plugin 'sheerun/vim-polyglot'
 call vundle#end()
 
 filetype plugin indent on
@@ -26,7 +27,7 @@ set number
 set tabstop=2
 set shiftwidth=2
 
-map <C-R> :source $HOME/.vimrc<CR>
+map \R :source $HOME/.vimrc<CR>
 
 
 "
