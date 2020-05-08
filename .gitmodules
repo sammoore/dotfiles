@@ -1,15 +1,15 @@
-[submodule "/home/sam/.vim/bundle/Vundle.vim"]
-	path = /home/sam/.vim/bundle/Vundle.vim
+[submodule ".vim/bundle/Vundle.vim"]
+	path = .vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
-[submodule "/home/sam/.vim/bundle/command-t"]
-	path = /home/sam/.vim/bundle/command-t
+[submodule ".vim/bundle/command-t"]
+	path = .vim/bundle/command-t
 	url = https://github.com/wincent/command-t.git
-[submodule "/home/sam/.vim/bundle/nerdtree"]
-	path = /home/sam/.vim/bundle/nerdtree
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
 	url = https://github.com/preservim/nerdtree.git
-[submodule "/home/sam/.vim/bundle/coc.nvim"]
-	path = /home/sam/.vim/bundle/coc.nvim
+[submodule ".vim/bundle/coc.nvim"]
+	path = .vim/bundle/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
-[submodule "/home/sam/.vim/bundle/vim-polyglot"]
-	path = /home/sam/.vim/bundle/vim-polyglot
+[submodule ".vim/bundle/vim-polyglot"]
+	path = .vim/bundle/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
