@@ -4,12 +4,12 @@
 [submodule "/home/sam/.vim/bundle/command-t"]
 	path = /home/sam/.vim/bundle/command-t
 	url = https://github.com/wincent/command-t.git
-[submodule "/home/sam/.vim/bundle/syntastic"]
-	path = /home/sam/.vim/bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic.git
 [submodule "/home/sam/.vim/bundle/nerdtree"]
 	path = /home/sam/.vim/bundle/nerdtree
 	url = https://github.com/preservim/nerdtree.git
+[submodule "/home/sam/.vim/bundle/coc.nvim"]
+	path = /home/sam/.vim/bundle/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git
 [submodule "/home/sam/.vim/bundle/vim-polyglot"]
 	path = /home/sam/.vim/bundle/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git

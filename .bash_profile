@@ -18,5 +18,9 @@ else ## Darwin
 	
 fi
 
+# kotlin-language-server
+# TODO: move/add as submodule
+export PATH="$PATH:/home/sam/Development/sammoore/kotlin-language-server/server/build/install/server/bin"
+
 # personal scripts
 export PATH="$HOME/bin:$PATH"
