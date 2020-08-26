@@ -13,7 +13,7 @@ precmd () {
 	fi
 
 	# use a colored CLI prompt for readability
-	export PROMPT='%F{blue}%n%f %F{cyan}%1~%f %F{magenta}'"$BRANCH"'%f'$'\n''%F{'"$PROMPT_COLOR"'}%#%f '
+	export PROMPT='%F{blue}%m%f %F{cyan}%1~%f %F{magenta}'"$BRANCH"'%f'$'\n''%F{'"$PROMPT_COLOR"'}%#%f '
 }
 
 . $HOME/.bash_profile
