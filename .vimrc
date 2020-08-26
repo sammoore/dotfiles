@@ -23,8 +23,11 @@ filetype plugin indent on
 "
 set showtabline=2
 
-set ruler
 set number
+set noruler " splits (+ coc?) breaks ruler
+set statusline+=\ %l\,%c " custom ruler
+set laststatus=2 " always show statusline
+set colorcolumn=101
 
 set tabstop=8
 set shiftwidth=2
