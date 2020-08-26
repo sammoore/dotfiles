@@ -41,6 +41,7 @@ fun! HardTabs()
 endfun
 
 map \R :source $HOME/.vimrc<CR>
+nn \d :nohlsearch<CR>
 
 
 "
