@@ -16,3 +16,6 @@
 [submodule ".vim/bundle/kotlin-vim"]
 	path = .vim/bundle/kotlin-vim
 	url = https://github.com/samtheprogram/kotlin-vim.git
+[submodule "git/fwcd/kotlin-language-server"]
+	path = git/fwcd/kotlin-language-server
+	url = https://github.com/fwcd/kotlin-language-server.git

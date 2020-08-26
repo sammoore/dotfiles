@@ -1,0 +1,17 @@
+{
+  "languageserver": {
+    "kotlin": {
+      "command": "/home/sam/git/fwcd/kotlin-language-server/server/build/install/server/bin/kotlin-language-server",
+      "filetypes": ["kotlin"],
+      "settings": {
+        "kotlin": {
+          "compiler": {
+            "jvm": {
+              "target": "1.8"
+            }
+          }
+        }
+      }
+    }
+  }
+}

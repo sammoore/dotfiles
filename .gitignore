@@ -8,6 +8,13 @@
 !.vimrc
 !.vim/
 .vim/*
+!.vim/coc-settings.json
 !.vim/bundle/
 
 !.tmux.conf
+
+!git/
+git/*
+!git/fwcd/
+git/fwcd/*
+!git/fwcd/kotlin-language-server/
