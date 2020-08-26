@@ -59,6 +59,34 @@ map <C-n> :NERDTreeToggle<CR>
 
 
 "
+" command-t
+"
+set wildignore+=*/node_modules
+set wildignore+=*/build
+set wildignore+=*/dist
+
+" typescript-specific wildignore stuff
+let s:MY_typescriptArtifactExtensions = ['*.d.ts', '*.map', '*.js']
+
+fun! ToggleIgnoreTypescriptArtifacts()
+  for ext in s:MY_typescriptArtifactExtensions
+    if &wildignore =~ ext
+      execute 'set wildignore-='.ext
+    else
+      execute 'set wildignore+='.ext
+    endif
+  endfor
+endfun
+
+if filereadable(expand("tsconfig.json"))
+  call ToggleIgnoreTypescriptArtifacts()
+endif
+
+" TODO: seems like command-t doesn't support wildignore changes after startup
+nmap \j :call ToggleIgnoreTypescriptArtifacts()<CR>
+
+
+"
 " coc
 "
 
