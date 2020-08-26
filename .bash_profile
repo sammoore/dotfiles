@@ -1,4 +1,4 @@
-if which systemd >/dev/null; then
+if command -v systemctl &>/dev/null; then
 	# java
 	export PATH="/snap/intellij-idea-community/current/jbr/bin:$PATH"
 	# kotlinc, kotlinc-js, kotlinc-jvm
