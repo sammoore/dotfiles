@@ -1,8 +1,3 @@
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 if which systemd >/dev/null; then
 	# java
 	export PATH="/snap/intellij-idea-community/current/jbr/bin:$PATH"
@@ -16,6 +11,13 @@ if which systemd >/dev/null; then
 	export XDG_DATA_DIRS="/var/lib/snapd/desktop:$XDG_DATA_DIRS"
 else ## BSD
 	echo "Darwin not yet implemented."
+fi
+
+# if node still not in PATH, then assume system is using nvm
+if ! command -v node &>/dev/null; then
+	export NVM_DIR="$HOME/.nvm"
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
 # kotlin-language-server
