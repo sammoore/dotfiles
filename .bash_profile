@@ -14,8 +14,8 @@ if which systemd >/dev/null; then
 	# snap
 	export PATH="/snap/bin:$PATH"
 	export XDG_DATA_DIRS="/var/lib/snapd/desktop:$XDG_DATA_DIRS"
-else ## Darwin
-	
+else ## BSD
+	echo "Darwin not yet implemented."
 fi
 
 # kotlin-language-server
