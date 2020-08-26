@@ -50,7 +50,7 @@ nn \d :nohlsearch<CR>
 autocmd BufReadPost *.kt setlocal filetype=kotlin
 autocmd FileType kotlin setlocal shiftwidth=4
 autocmd FileType kotlin setlocal cinoptions=+8 " intellij-style continuation indent
-
+autocmd BufReadPost *ServerApplication.kt setlocal paste
 
 "
 " NERDTree
