@@ -34,6 +34,12 @@ set shiftwidth=2
 set softtabstop=-1 " insert mode only: treat shiftwidth # of spaces as a tab
 set expandtab
 
+fun! HardTabs()
+  set noexpandtab
+  set shiftwidth=8
+  set softtabstop=0
+endfun
+
 map \R :source $HOME/.vimrc<CR>
 
 
