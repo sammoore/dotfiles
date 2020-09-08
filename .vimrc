@@ -29,6 +29,13 @@ set statusline+=\ %l\,%c " custom ruler
 set laststatus=2 " always show statusline
 set colorcolumn=101
 
+fun! WordWrap()
+  set nolist " just in case it's been switched on to see tabs + newlines
+  set linebreak
+  set wrap
+  set textwidth?
+endfun
+
 set tabstop=8
 set shiftwidth=2
 set softtabstop=-1 " insert mode only: treat shiftwidth # of spaces as a tab
