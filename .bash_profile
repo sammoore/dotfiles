@@ -13,11 +13,20 @@ else ## BSD
 	echo "Darwin not yet implemented."
 fi
 
+
 # if node still not in PATH, then assume system is using nvm
+# this can be run multiple times
 if ! command -v node &>/dev/null; then
 	export NVM_DIR="$HOME/.nvm"
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
+
+# we always use rbenv, but if it's already defined, do not dirty path / etc
+if ! command -v rbenv $>/dev/null; then
+	export PATH="$HOME/.rbenv/bin:$PATH"
+        export RBENV_ROOT="$HOME/.local/share/rbenv"
+        eval "$(rbenv init -)"
 fi
 
 # kotlin-language-server

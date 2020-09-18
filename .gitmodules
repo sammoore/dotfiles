@@ -19,3 +19,9 @@
 [submodule "git/fwcd/kotlin-language-server"]
 	path = git/fwcd/kotlin-language-server
 	url = https://github.com/fwcd/kotlin-language-server.git
+[submodule "/Users/sam/.rbenv"]
+	path = /Users/sam/.rbenv
+	url = https://github.com/rbenv/rbenv.git
+[submodule "/Users/sam/.local/share/rbenv/plugins/ruby-build"]
+	path = /Users/sam/.local/share/rbenv/plugins/ruby-build
+	url = https://github.com/rbenv/ruby-build.git

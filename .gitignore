@@ -5,6 +5,21 @@
 !.bash_profile
 !.zshrc
 
+!.rbenv
+!.local/
+.local/*
+!.local/share/
+.local/share/rbenv/*
+!.local/share/rbenv/versions/
+.local/share/rbenv/versions/*
+!.local/share/rbenv/versions/.gitkeep
+!.local/share/rbenv/shims/
+.local/share/rbenv/shims/*
+!.local/share/rbenv/shims/.gitkeep
+!.local/share/rbenv/plugins/
+.local/share/rbenv/plugins/*
+!.local/share/rbenv/plugins/ruby-build
+
 !.vimrc
 !.vim/
 .vim/*
