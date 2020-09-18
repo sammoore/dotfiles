@@ -13,6 +13,11 @@ else
 			export PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
 			export PATH="$HOME/Library/Python/3.11/bin:$PATH"
 		fi
+
+		if [ -d /usr/local/opt/openjdk@11 ]; then
+			export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+			export JAVA_HOME="$(/usr/libexec/java_home -v 11)"
+		fi
 	else
 		echo "Welcome to BSD (not implemented)."
 	fi
