@@ -33,6 +33,8 @@ fi
 if ! command -v node &>/dev/null; then
 	export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+	command -v node &>/dev/null \
+		|| echo "warning: node not found; is nvm installed?"
 fi
 
 # attempt to install rbenv if not already defined
@@ -51,6 +53,9 @@ export PATH="/home/sam/.yarn/bin:$PATH"
 
 # kotlin-language-server
 export PATH="$PATH:$HOME/git/fwcd/kotlin-language-server/server/build/install/server/bin"
+if ! command -v kotlin-language-server &>/dev/null; then
+	echo "warning: kotlin-language-server not found; did you build it?"
+fi
 
 # personal scripts
 export PATH="$HOME/bin:$PATH"
