@@ -45,6 +45,8 @@ if ! command -v rbenv &>/dev/null; then
 	if command -v rbenv &>/dev/null; then
 		export RBENV_ROOT="$HOME/.local/share/rbenv"
 		eval "$(rbenv init -)"
+	else
+		echo "warning: rbenv not found, did you install it?"
 	fi
 fi
 
