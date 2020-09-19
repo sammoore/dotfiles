@@ -49,6 +49,9 @@ fi
 # yarn nonsense
 export PATH="/home/sam/.yarn/bin:$PATH"
 
+# kotlin-language-server
+export PATH="$PATH:$HOME/git/fwcd/kotlin-language-server/server/build/install/server/bin"
+
 # personal scripts
 export PATH="$HOME/bin:$PATH"
 
