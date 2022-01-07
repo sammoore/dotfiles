@@ -25,3 +25,6 @@
 [submodule ".local/share/rbenv/plugins/ruby-build"]
 	path = .local/share/rbenv/plugins/ruby-build
 	url = https://github.com/rbenv/ruby-build.git
+[submodule "git/vim/vim"]
+	path = git/vim/vim
+	url = https://github.com/vim/vim
