@@ -30,6 +30,11 @@
 
 !git/
 git/*
+
 !git/fwcd/
 git/fwcd/*
 !git/fwcd/kotlin-language-server/
+
+!git/vim/
+git/vim/*
+!git/vim/vim/
