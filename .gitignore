@@ -31,6 +31,10 @@
 !git/
 git/*
 
+!bin/
+bin/*
+!bin/setup_vim.bash
+
 !git/fwcd/
 git/fwcd/*
 !git/fwcd/kotlin-language-server
