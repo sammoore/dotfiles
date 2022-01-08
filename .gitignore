@@ -9,6 +9,8 @@
 !.local/
 .local/*
 !.local/share/
+.local/share/*
+!.local/share/rbenv/
 .local/share/rbenv/*
 !.local/share/rbenv/versions/
 .local/share/rbenv/versions/*
