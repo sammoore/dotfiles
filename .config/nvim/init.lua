@@ -50,3 +50,10 @@ set.wildignore:append('*/build')
 set.wildignore:append('*/dist')
 
 
+--
+-- coc
+--
+
+vim.cmd [[source $HOME/.config/nvim/coc.vim]]
+
+

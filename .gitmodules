@@ -7,3 +7,6 @@
 [submodule ".local/share/nvim/site/pack/vendor/enter/command-t"]
 	path = .local/share/nvim/site/pack/vendor/enter/command-t
 	url = https://github.com/wincent/command-t.git
+[submodule ".local/share/nvim/site/pack/coc/start/coc.nvim"]
+	path = .local/share/nvim/site/pack/coc/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git
