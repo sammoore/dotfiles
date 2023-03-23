@@ -1,0 +1,14 @@
+/*
+/.*
+
+!.gitconfig
+!.gitignore
+!.bash_profile
+!.zshrc
+!.tmux.conf
+
+!.config/
+.config/*
+!.config/nvim/
+
+!.asdf

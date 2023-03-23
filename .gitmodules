@@ -1,0 +1,9 @@
+[submodule ".asdf"]
+	path = .asdf
+	url = https://github.com/asdf-vm/asdf.git
+[submodule ".local/share/nvim/site/pack/vendor/start/nerdtree"]
+	path = .local/share/nvim/site/pack/vendor/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule ".local/share/nvim/site/pack/vendor/enter/command-t"]
+	path = .local/share/nvim/site/pack/vendor/enter/command-t
+	url = https://github.com/wincent/command-t.git
