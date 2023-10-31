@@ -16,11 +16,15 @@ Plugin 'neoclide/coc.nvim'
 call vundle#end()
 
 filetype plugin indent on
+syntax on
 
 
 "
 " General
 "
+set backspace=indent,eol,start
+set re=0
+
 set showtabline=2
 
 set number
