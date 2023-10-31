@@ -13,7 +13,15 @@ if command -v systemctl &>/dev/null; then
         echo "Nothing to do." >/dev/null
 else
 	## BSD or Darwin
-	echo "Darwin not yet implemented."
+	if command -v launchctl &>/dev/null; then
+		echo "Welcome to Darwin!"
+
+		if command -v /opt/local/bin/port &>/dev/null; then
+			export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+		fi
+	else
+		echo "BSD not implemented."
+	fi
 fi
 
 
@@ -24,11 +32,14 @@ if ! command -v node &>/dev/null; then
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 fi
 
-# we always use rbenv, but if it's already defined, do not dirty path / etc
-if ! command -v rbenv $>/dev/null; then
+# attempt to install rbenv if not already defined
+if ! command -v rbenv &>/dev/null; then
 	export PATH="$HOME/.rbenv/bin:$PATH"
-        export RBENV_ROOT="$HOME/.local/share/rbenv"
-        eval "$(rbenv init -)"
+
+	if command -v rbenv &>/dev/null; then
+		export RBENV_ROOT="$HOME/.local/share/rbenv"
+		eval "$(rbenv init -)"
+	fi
 fi
 
 # kotlin-language-server
