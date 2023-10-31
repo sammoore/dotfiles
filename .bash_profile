@@ -19,6 +19,11 @@ else
 		if command -v /opt/local/bin/port &>/dev/null; then
 			export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 		fi
+
+		if [ -d /opt/homebrew/opt/python@3.11 ]; then
+			export PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
+			export PATH="$HOME/Library/Python/3.11/bin:$PATH"
+		fi
 	else
 		echo "BSD not implemented."
 	fi
