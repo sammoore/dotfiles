@@ -1,3 +1,4 @@
+
 if command -v systemctl &>/dev/null; then
 	## java
 	#export PATH="/snap/intellij-idea-community/current/jbr/bin:$PATH"
@@ -52,3 +53,8 @@ export PATH="/home/sam/.yarn/bin:$PATH"
 
 # personal scripts
 export PATH="$HOME/bin:$PATH"
+
+# python user packages
+export PATH="$HOME/.local/bin:$PATH"
+
+export EDITOR="$(which vim)"
