@@ -47,9 +47,8 @@ if ! command -v rbenv &>/dev/null; then
 	fi
 fi
 
-# kotlin-language-server
-# TODO: move/add as submodule
-export PATH="$PATH:/home/sam/Development/sammoore/kotlin-language-server/server/build/install/server/bin"
+# yarn nonsense
+export PATH="/home/sam/.yarn/bin:$PATH"
 
 # personal scripts
 export PATH="$HOME/bin:$PATH"
