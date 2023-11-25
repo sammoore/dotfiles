@@ -30,6 +30,7 @@ set showtabline=2
 set number
 set noruler " splits (+ coc?) breaks ruler
 set statusline+=\ %l\,%c " custom ruler
+set statusline+=\ %f " add filename
 set laststatus=2 " always show statusline
 set colorcolumn=101
 
