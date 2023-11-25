@@ -1,4 +1,7 @@
 {
+  "eslint": {
+    "packageManager": "pnpm"
+  },
   "languageserver": {
     "kotlin": {
       "command": "/home/sam/git/fwcd/kotlin-language-server/server/build/install/server/bin/kotlin-language-server",
