@@ -31,8 +31,16 @@ precmd () {
 
 . $HOME/.bash_profile
 
+# nvm
 export NVM_DIR=~/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# bun completions
+[ -s "/home/sam/.bun/_bun" ] && source "/home/sam/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 # pnpm
 export PNPM_HOME="/home/sam/.local/share/pnpm"
