@@ -54,7 +54,21 @@ endfun
 
 map \R :source $HOME/.vimrc<CR>
 nn \d :nohlsearch<CR>
+nn \2 :setlocal shiftwidth=2<CR>
+nn \4 :setlocal shiftwidth=4<CR>
+nn \<TAB> :set shiftwidth=8 softtabstop=0 noexpandtab<CR>
+nn \<S-TAB> :set shiftwidth=2 softtabstop=-1 expandtab<CR>
+nn \\<TAB> :set foldmethod=indent<CR>
 
+nn \a :! git add %<CR>
+nn \B :! git blame %<CR>
+nn \Dd :! git diff %<CR>
+nn \DD :! git diff<CR>
+nn \c :! git rebase --continue<CR>
+nn \C :! git commit<CR>
+nn \s :! git status<CR>
+nn \U :! git add -u<CR>
+nn \< /<<<<<<CR>
 
 "
 " Kotlin
@@ -100,6 +114,7 @@ endif
 " TODO: seems like command-t doesn't support wildignore changes after startup
 nmap \j :call ToggleIgnoreTypescriptArtifacts()<CR>
 
+let g:CommandTTraverseSCM="pwd"
 
 "
 " coc
