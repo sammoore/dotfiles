@@ -1,17 +1,5 @@
-
 if command -v systemctl &>/dev/null; then
-	## java
-	#export PATH="/snap/intellij-idea-community/current/jbr/bin:$PATH"
-	## kotlinc, kotlinc-js, kotlinc-jvm
-	#export PATH="/snap/intellij-idea-community/current/plugins/Kotlin/kotlinc/bin:$PATH"
-	## intellij -- "idea.sh"
-	#export PATH="/snap/intellij-idea-community/current/bin:$PATH"
-	#
-	## snap
-	#export PATH="/snap/bin:$PATH"
-	#export XDG_DATA_DIRS="/var/lib/snapd/desktop:$XDG_DATA_DIRS"
-
-        echo "Nothing to do." >/dev/null
+        echo "Welcome to $(uname)!"
 else
 	## BSD or Darwin
 	if command -v launchctl &>/dev/null; then
