@@ -28,3 +28,6 @@
 [submodule "git/vim/vim"]
 	path = git/vim/vim
 	url = https://github.com/vim/vim
+[submodule ".asdf"]
+	path = .asdf
+	url = /home/sam/.asdf

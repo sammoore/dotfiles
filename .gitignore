@@ -5,7 +5,9 @@
 !.bash_profile
 !.zshrc
 
+!.asdf
 !.rbenv
+
 !.local/
 .local/*
 !.local/share/

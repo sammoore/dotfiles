@@ -48,6 +48,8 @@ if ! command -v rbenv &>/dev/null; then
 	fi
 fi
 
+. "$HOME/.asdf/asdf.sh"
+
 # yarn nonsense
 export PATH="/home/sam/.yarn/bin:$PATH"
 
