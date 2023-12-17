@@ -33,6 +33,7 @@ fi
 # attempt to install rbenv if not already defined
 if ! command -v rbenv &>/dev/null; then
 	export PATH="$HOME/.rbenv/bin:$PATH"
+	hash -r
 
 	if command -v rbenv &>/dev/null; then
 		export RBENV_ROOT="$HOME/.local/share/rbenv"
