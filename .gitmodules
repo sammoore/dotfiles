@@ -31,3 +31,6 @@
 [submodule ".asdf"]
 	path = .asdf
 	url = /home/sam/.asdf
+[submodule ".vim/bundle/yats.vim"]
+	path = .vim/bundle/yats.vim
+	url = git@github.com:HerringtonDarkholme/yats.vim

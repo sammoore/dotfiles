@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'wincent/command-t'
 Plugin 'preservim/nerdtree'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'yats.vim'
 Plugin 'samtheprogram/kotlin-vim'
 Plugin 'neoclide/coc.nvim'
 call vundle#end()
