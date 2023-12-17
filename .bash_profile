@@ -18,6 +18,10 @@ else
 	fi
 fi
 
+# check for asdf and use it if installed
+if [ -d $HOME/.asdf ]; then
+	. "$HOME/.asdf/asdf.sh"
+fi
 
 # if node still not in PATH, then assume system is using nvm
 # this can be run multiple times
@@ -35,8 +39,6 @@ if ! command -v rbenv &>/dev/null; then
 		eval "$(rbenv init -)"
 	fi
 fi
-
-. "$HOME/.asdf/asdf.sh"
 
 # yarn nonsense
 export PATH="/home/sam/.yarn/bin:$PATH"
