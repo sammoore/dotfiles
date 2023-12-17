@@ -31,3 +31,12 @@
 [submodule ".vim/bundle/yats.vim"]
 	path = .vim/bundle/yats.vim
 	url = git@github.com:HerringtonDarkholme/yats.vim
+[submodule ".vim/bundle/vim-js"]
+	path = .vim/bundle/vim-js
+	url = git@github.com:yuezk/vim-js.git
+[submodule ".vim/bundle/vim-jsx-pretty"]
+	path = .vim/bundle/vim-jsx-pretty
+	url = git@github.com:maxmellon/vim-jsx-pretty.git
+[submodule ".vim/bundle/vim-json"]
+	path = .vim/bundle/vim-json
+	url = git@github.com:elzr/vim-json.git

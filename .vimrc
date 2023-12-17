@@ -10,13 +10,20 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'wincent/command-t'
 Plugin 'preservim/nerdtree'
+Plugin 'elzr/vim-json'
+Plugin 'yuezk/vim-js'
 Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'samtheprogram/kotlin-vim'
 Plugin 'neoclide/coc.nvim'
 call vundle#end()
 
 filetype plugin indent on
 syntax on
+
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:vim_json_syntax_conceal = 0
 
 
 "
