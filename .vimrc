@@ -3,13 +3,14 @@
 "
 set nocompatible
 filetype off
-let g:polyglot_disabled = ['kotlin'] " we use a custom vim-kotlin
+let g:polyglot_disabled = ['javascript', 'javascriptreact', 'json', 'kotlin', 'typescript', 'typescriptreact']
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'wincent/command-t'
 Plugin 'preservim/nerdtree'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'elzr/vim-json'
 Plugin 'yuezk/vim-js'
 Plugin 'HerringtonDarkholme/yats.vim'
@@ -36,10 +37,14 @@ set showtabline=2
 
 set number
 set noruler " splits (+ coc?) breaks ruler
-set statusline+=\ %l\,%c " custom ruler
-set statusline+=\ %f " add filename
 set laststatus=2 " always show statusline
 set colorcolumn=101
+
+" remove & add so vimrc can be sourced repeatedly
+set statusline-=\ %l\,%c " custom ruler
+set statusline+=\ %l\,%c " custom ruler
+set statusline-=\ %f " add filename
+set statusline+=\ %f " add filename
 
 fun! WordWrap()
   set nolist " just in case it's been switched on to see tabs + newlines
