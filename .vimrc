@@ -39,6 +39,8 @@ set number
 set noruler " splits (+ coc?) breaks ruler
 set laststatus=2 " always show statusline
 set colorcolumn=101
+set cursorcolumn
+highlight CursorColumn ctermbg=Black cterm=bold guibg=black gui=bold
 
 " remove & add so vimrc can be sourced repeatedly
 set statusline-=\ %l\,%c " custom ruler
