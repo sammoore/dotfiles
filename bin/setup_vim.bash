@@ -35,8 +35,8 @@ pushd $HOME/git/vim/vim
 	make distclean
 	./configure \
 		--enable-gui=no \
-		--with-features=normal \
-		--enable-cscope \
+		--with-features=huge \
+                --enable-cscope \
 		--enable-luainterp \
 		--enable-perlinterp \
 		--enable-pythoninterp \
