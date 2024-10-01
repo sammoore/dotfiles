@@ -1,3 +1,5 @@
+EDITOR="$(which vim)"
+
 if command -v systemctl &>/dev/null; then
         echo "Welcome to $(uname)!"
 else
