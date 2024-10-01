@@ -20,6 +20,20 @@ else
 			export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
 			export JAVA_HOME="$(/usr/libexec/java_home -v 11)"
 		fi
+
+		if [ -d /usr/local/opt/openjdk@17 ]; then
+			export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
+			export JAVA_HOME="$(/usr/libexec/java_home -v 17)"
+		fi
+
+		# macports; if present it should supercede the prior homebrew setup
+		if command -v /opt/local/bin/port &>/dev/null; then
+			export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+
+			if [ -d /Library/Java/JavaVirtualMachines/openjdk17-temurin/Contents/Home ]; then
+				export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk17-temurin/Contents/Home"
+			fi
+		fi
 	else
 		echo "Welcome to BSD (not implemented)."
 	fi
