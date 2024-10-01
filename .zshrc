@@ -64,6 +64,9 @@ precmd () {
 
 . $HOME/.bash_profile
 
+# asdf completions
+fpath=(${ASDF_DIR}/completions $fpath)
+
 # nvm
 export NVM_DIR=~/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"

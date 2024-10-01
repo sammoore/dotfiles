@@ -68,6 +68,11 @@ fi
 if [ -d $HOME/.asdf ]; then
 	echo "Loading asdf..."
 	. "$HOME/.asdf/asdf.sh"
+	
+	if [ bash = "$(shell)" ]; then
+		echo "Loading asdf bash completions..."
+		. "$HOME/.asdf/completions/asdf.bash"
+	fi
 fi
 
 # if node still not in PATH, then assume system is using nvm

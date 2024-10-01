@@ -25,6 +25,8 @@
 .local/share/rbenv/plugins/*
 !.local/share/rbenv/plugins/ruby-build
 
+!.asdf
+
 !.vimrc
 !.vim/
 .vim/*
