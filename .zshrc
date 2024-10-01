@@ -64,24 +64,25 @@ precmd () {
 
 . $HOME/.bash_profile
 
-# asdf completions
+echo "Loading asdf zsh completions..."
 fpath=(${ASDF_DIR}/completions $fpath)
 
-# nvm
-export NVM_DIR=~/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+if [ -d "$HOME/.bun" ]; then
+	echo "Loading bun..."
+	export BUN_INSTALL="$HOME/.bun"
+	export PATH="$BUN_INSTALL/bin:$PATH"
 
-# bun completions
-[ -s "/home/sam/.bun/_bun" ] && source "/home/sam/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+	# bun completions
+	[ -s "/home/sam/.bun/_bun" ] && source "/home/sam/.bun/_bun"
+fi
 
 # pnpm
-export PNPM_HOME="/home/sam/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
+if [ -d "$HOME/.local/share/pnpm" ]; then
+	echo "Loading pnpm..."
+	export PNPM_HOME="/home/sam/.local/share/pnpm"
+	case ":$PATH:" in
+	  *":$PNPM_HOME:"*) ;;
+	  *) export PATH="$PNPM_HOME:$PATH" ;;
+	esac
+fi
 # pnpm end

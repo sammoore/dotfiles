@@ -78,7 +78,7 @@ fi
 # if node still not in PATH, then assume system is using nvm
 # this can be run multiple times
 if ! command -v node &>/dev/null; then
-	echo "Loading NVM..."
+	echo "Loading nvm..."
 	export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 	command -v node &>/dev/null \
