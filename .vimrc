@@ -39,8 +39,6 @@ set number
 set noruler " splits (+ coc?) breaks ruler
 set laststatus=2 " always show statusline
 set colorcolumn=101
-set cursorcolumn
-highlight CursorColumn ctermbg=Black cterm=bold guibg=black gui=bold
 
 " remove & add so vimrc can be sourced repeatedly
 set statusline-=\ %l\,%c " custom ruler
@@ -173,14 +171,16 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" NOTE: swapped chars / changed to match Zed shortcut
+nmap <silent> g[ <Plug>(coc-diagnostic-prev)
+nmap <silent> g] <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+" NOTE: changed to match Zed shortcut
+nmap <silent> gI <Plug>(coc-implementation)
+nmap <silent> gA <Plug>(coc-references)
 
 " NOTE: [...] this coc config is abridged here
 
