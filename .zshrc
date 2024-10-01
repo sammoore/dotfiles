@@ -11,8 +11,41 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+chpwd () {
+	# check for nvmrc
+	if [ -f .nvmrc ] && which asdf >/dev/null; then
+		echo "Found .nvmrc with ""$(cat .nvmrc)"", attempting to change..."
+		local VERSION="$(cat .nvmrc)"
+
+		# convert nvmrc syntax to asdf
+		if [[ $VERSION =~ .x$ ]]; then
+			VERSION="$(printf $VERSION | sed 's/[.]x//')"
+		elif [[ $VERSION =~ ^v ]]; then
+			VERSION="$(printf $VERSION | sed 's/^v//')"
+		fi
+
+		# does nothing to exact matches, resolves latest for nvmrc syntax conversation
+		VERSION="$(asdf latest nodejs $VERSION)"
+
+		if ! asdf shell nodejs $VERSION; then
+			echo "\ttry: printf \"install"'\\n'"shell\" | xargs -I {} asdf {} nodejs $VERSION"
+		else
+			echo "now using nodejs $VERSION"
+		fi
+	fi
+}
+
+INIT="0"
+
 precmd () {
 	local SUCCESS=$?
+
+	if [ $INIT -lt 1 ]; then
+		INIT=1
+		chpwd
+	fi
+
+	# generate prompt
 	local PROMPT_COLOR="green"
 
 	if [ "$SUCCESS" -gt 0 ]; then
