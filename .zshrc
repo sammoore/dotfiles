@@ -13,8 +13,8 @@ compinit
 
 chpwd () {
 	# check for nvmrc
-	if [ -f .nvmrc ] && which asdf >/dev/null; then
-		echo "Found .nvmrc with ""$(cat .nvmrc)"", attempting to change..."
+	if [ -f .nvmrc ] && which asdf >/dev/null && asdf list nodejs 2>/dev/null >/dev/null; then
+		echo "Found .nvmrc with ""$(cat .nvmrc)"", attempting to use with asdf..."
 		local VERSION="$(cat .nvmrc)"
 
 		# convert nvmrc syntax to asdf
@@ -29,6 +29,15 @@ chpwd () {
 
 		if ! asdf shell nodejs $VERSION; then
 			echo "\ttry: printf \"install"'\\n'"shell\" | xargs -I {} asdf {} nodejs $VERSION"
+		else
+			echo "now using nodejs $VERSION"
+		fi
+	elif [ -f .nvmrc ] && which nvm >/dev/null; then
+		echo "Found .nvmrc with ""$(cat .nvmrc)"", attempting to use with nvm..."
+		local VERSION="$(cat .nvmrc)"
+
+		if ! nvm use $VERSION; then
+			echo "\ttry: nvm install $VERSION"
 		else
 			echo "now using nodejs $VERSION"
 		fi
