@@ -67,4 +67,7 @@ export PATH="$HOME/bin:$PATH"
 # python user packages
 export PATH="$HOME/.local/bin:$PATH"
 
+## rust/cargo packages
+source "$HOME/.cargo/env"
+
 export EDITOR="$(which vim)"
