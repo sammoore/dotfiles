@@ -1,7 +1,7 @@
 if command -v systemctl &>/dev/null; then
         echo "Welcome to $(uname)!"
 else
-	## BSD or Darwin
+	## Darwin (macOS)
 	if command -v launchctl &>/dev/null; then
 		echo "Welcome to Darwin!"
 
@@ -14,7 +14,7 @@ else
 			export PATH="$HOME/Library/Python/3.11/bin:$PATH"
 		fi
 	else
-		echo "BSD not implemented."
+		echo "Welcome to BSD (not implemented)."
 	fi
 fi
 
