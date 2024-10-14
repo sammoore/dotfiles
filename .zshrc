@@ -28,7 +28,7 @@ chpwd () {
 		VERSION="$(asdf latest nodejs $VERSION)"
 
 		if ! asdf shell nodejs $VERSION; then
-			echo "\ttry: printf \"install"'\\n'"shell\" | xargs -I {} asdf {} nodejs $VERSION"
+			echo "\ttry: asdf install nodejs $VERSION; asdf shell nodejs $VERSION"
 		else
 			echo "now using nodejs $VERSION"
 		fi
