@@ -99,7 +99,11 @@ if ! command -v rbenv &>/dev/null; then
 	fi
 fi
 
-echo "Exporting other paths..."
+echo "Updating environment..."
+
+alias la="ls -la --color=auto"
+alias lap="ls -lap --color=auto"
+alias lp="ls -lp --color=auto"
 
 # yarn nonsense
 export PATH="/home/sam/.yarn/bin:$PATH"
