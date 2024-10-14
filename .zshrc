@@ -61,6 +61,13 @@ precmd () {
 		PROMPT_COLOR="red"
 	fi
 
+	# show python venv
+	local PROMPT_VENV=""
+	if declare -p VIRTUAL_ENV 2>/dev/null >/dev/null; then
+		PROMPT_VENV="(.venv) "
+	fi
+
+	# show git branch
 	local BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
 
 	if [ ! -z "$BRANCH" ]; then
@@ -68,7 +75,7 @@ precmd () {
 	fi
 
 	# use a colored CLI prompt for readability
-	export PROMPT='%F{blue}%m%f %F{cyan}%1~%f %F{magenta}'"$BRANCH"'%f'$'\n''%F{'"$PROMPT_COLOR"'}%#%f '
+	export PROMPT=$PROMPT_VENV'%F{blue}%m%f %F{cyan}%1~%f %F{magenta}'"$BRANCH"'%f'$'\n''%F{'"$PROMPT_COLOR"'}%#%f '
 }
 
 . $HOME/.bash_profile
