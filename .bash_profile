@@ -6,7 +6,6 @@
 #
 # Per the above, this file should be relatively portable shell.
 
-
 # Use sparingly / avoid shell-specific code. Acceptable for:
 #
 # 1. conditionally loading shell completions
@@ -27,7 +26,12 @@ shell()
 
 # Debug messaging & conditional environment setup based on OS.
 if command -v systemctl &>/dev/null; then
-        echo "Welcome to $(uname)!"
+	echo "Welcome to $(uname)!"
+
+	if [ bash = "$(shell)" ]; then
+		echo "Sourcing .bashrc if found..."
+		[[ -f ~/.bashrc ]] && . ~/.bashrc
+	fi
 else
 	## Darwin (macOS)
 	if command -v launchctl &>/dev/null; then
@@ -121,6 +125,6 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 ## rust/cargo packages
-source "$HOME/.cargo/env"
+[[ -f ~/.cargo/env ]] && source "~/.cargo/env"
 
 export EDITOR="$(which vim)"
