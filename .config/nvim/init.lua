@@ -47,6 +47,21 @@ local function build_plugin(plugin_name)
         vim.notify(plugin_name .. " built successfully!", vim.log.levels.INFO)
       end
     end,
+    ["nvim-treesitter"] = function()
+      local current_hash = get_git_hash(plugin_path)
+      local last_built_hash = state[plugin_name] and state[plugin_name].last_built_hash or ""
+
+      if current_hash ~= last_built_hash then
+        vim.notify("Updating treesitter parsers...", vim.log.levels.INFO)
+        vim.cmd('TSUpdate')
+
+        -- Update build state
+        state[plugin_name] = { last_built_hash = current_hash }
+        save_build_state(state)
+
+        vim.notify("Treesitter parsers updated successfully!", vim.log.levels.INFO)
+      end
+    end
     -- Add more plugins and their build commands here as needed
     -- ["example-plugin"] = function() ... end,
   }
@@ -68,6 +83,28 @@ local function build_all_plugins()
   end
 end
 
+require('nvim-treesitter.configs').setup({
+  ensure_installed = {
+    "typescript",
+    "javascript",
+    "lua",
+    "vim",
+    "vimdoc",
+    "query",
+    "bash",
+    "markdown",
+    "markdown_inline",
+  },
+  sync_install = false,
+  auto_install = true,
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+  indent = { enable = true },
+})
+
+
 -- Build plugins on startup
 build_all_plugins()
 
@@ -81,19 +118,6 @@ vim.opt.tabstop = 2
 -- Status line configuration
 vim.opt.statusline = vim.opt.statusline + "%{coc#status()}%{get(b:,'coc_current_function','')}"
 
--- Telescope configuration
-require('telescope').setup{
-  defaults = {
-    file_ignore_patterns = {
-      "node_modules",
-      "build",
-      "dist",
-      "%.d.ts",
-      "%.js.map",
-      "%.js"
-    }
-  }
-}
 
 -- Telescope keymaps
 vim.keymap.set('n', '<leader>t', require('telescope.builtin').find_files, { desc = 'Find files' })
