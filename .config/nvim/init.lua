@@ -3,7 +3,7 @@
 
 -- Check and build coc.nvim if needed
 local function ensure_coc_nvim_built()
-  local coc_build_file = vim.fn.stdpath("data") .. "/plugged/coc.nvim/build/index.js"
+  local coc_build_file = vim.fn.stdpath("config") .. "/pack/plugins/start/coc.nvim/build/index.js"
   if vim.fn.empty(vim.fn.glob(coc_build_file)) > 0 then
     vim.notify("Building coc.nvim...", vim.log.levels.INFO)
     vim.fn.system("cd " .. vim.fn.stdpath("config") .. "/pack/plugins/start/coc.nvim && npm ci")
