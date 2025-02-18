@@ -2,16 +2,44 @@
 -- Plugin configurations are set directly in init.lua
 
 -- Plugin build system
+local function load_build_state()
+  local state_file = vim.fn.stdpath("config") .. "/plugin_build_state.json"
+  if vim.fn.empty(vim.fn.glob(state_file)) > 0 then
+    return {}
+  end
+  local content = vim.fn.readfile(state_file)
+  return vim.fn.json_decode(table.concat(content, "\n"))
+end
+
+local function save_build_state(state)
+  local state_file = vim.fn.stdpath("config") .. "/plugin_build_state.json"
+  local content = vim.fn.json_encode(state)
+  vim.fn.writefile({content}, state_file)
+end
+
+local function get_git_hash(plugin_path)
+  local current = vim.fn.system(string.format("cd %s && git rev-parse HEAD", plugin_path))
+  return string.gsub(current, "%s+", "") -- trim whitespace
+end
+
 local function build_plugin(plugin_name)
   local plugin_path = vim.fn.stdpath("config") .. "/pack/plugins/start/" .. plugin_name
+  local state = load_build_state()
   
   -- Plugin-specific build commands
   local build_commands = {
     ["coc.nvim"] = function()
-      local build_file = plugin_path .. "/build/index.js"
-      if vim.fn.empty(vim.fn.glob(build_file)) > 0 then
+      local current_hash = get_git_hash(plugin_path)
+      local last_built_hash = state[plugin_name] and state[plugin_name].last_built_hash or ""
+      
+      if current_hash ~= last_built_hash then
         vim.notify("Building " .. plugin_name .. "...", vim.log.levels.INFO)
         vim.fn.system("cd " .. plugin_path .. " && npm ci")
+        
+        -- Update build state
+        state[plugin_name] = { last_built_hash = current_hash }
+        save_build_state(state)
+        
         vim.notify(plugin_name .. " built successfully!", vim.log.levels.INFO)
       end
     end,
