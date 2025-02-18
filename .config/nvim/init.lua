@@ -53,13 +53,15 @@ local function build_plugin(plugin_name)
 
       if current_hash ~= last_built_hash then
         vim.notify("Updating treesitter parsers...", vim.log.levels.INFO)
-        vim.cmd('TSUpdate')
+        
+        -- Use the Lua API instead of command
+        require('nvim-treesitter.install').update()
 
         -- Update build state
         state[plugin_name] = { last_built_hash = current_hash }
         save_build_state(state)
 
-        vim.notify("Treesitter parsers updated successfully!", vim.log.levels.INFO)
+        vim.notify("Treesitter parsers update initiated!", vim.log.levels.INFO)
       end
     end
     -- Add more plugins and their build commands here as needed
@@ -103,7 +105,6 @@ require('nvim-treesitter.configs').setup({
   },
   indent = { enable = true },
 })
-
 
 -- Build plugins on startup
 build_all_plugins()
