@@ -46,3 +46,9 @@
 [submodule ".asdf"]
 	path = .asdf
 	url = https://github.com/asdf-vm/asdf.git
+[submodule ".config/nvim/pack/plugins/start/coc.nvim"]
+	path = .config/nvim/pack/plugins/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git
+[submodule ".config/nvim/pack/plugins/start/nerdtree"]
+	path = .config/nvim/pack/plugins/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
