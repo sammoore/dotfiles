@@ -1,6 +1,18 @@
 -- Your Neovim plugins are managed via git submodules
 -- Plugin configurations are set directly in init.lua
 
+-- Check and build coc.nvim if needed
+local function ensure_coc_nvim_built()
+  local coc_build_file = vim.fn.stdpath("data") .. "/plugged/coc.nvim/build/index.js"
+  if vim.fn.empty(vim.fn.glob(coc_build_file)) > 0 then
+    vim.notify("Building coc.nvim...", vim.log.levels.INFO)
+    vim.fn.system("cd " .. vim.fn.stdpath("config") .. "/pack/plugins/start/coc.nvim && npm ci")
+    vim.notify("coc.nvim built successfully!", vim.log.levels.INFO)
+  end
+end
+
+ensure_coc_nvim_built()
+
 -- Basic vim options
 vim.opt.number = true
 vim.opt.relativenumber = true
