@@ -110,7 +110,10 @@ require('nvim-treesitter.configs').setup({
 build_all_plugins()
 
 -- Colorscheme
-vim.cmd[[colorscheme onedark]]
+require('onedark').setup {
+    style = 'deeper'
+}
+require('onedark').load()
 
 -- Basic vim options
 vim.opt.number = true
