@@ -27,6 +27,10 @@
 
 !.asdf
 
+!.config/
+.config/*
+!.config/nvim/
+
 !.vimrc
 !.vim/
 .vim/*
