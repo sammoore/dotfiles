@@ -61,9 +61,7 @@ local function build_plugin(plugin_name)
         state[plugin_name] = { last_built_hash = current_hash }
         save_build_state(state)
 
-        vim.schedule(function()
-          vim.notify("Treesitter parsers update initiated!", vim.log.levels.INFO)
-        end)
+        vim.notify("Treesitter parsers update initiated!", vim.log.levels.INFO)
       end
     end
     -- Add more plugins and their build commands here as needed
