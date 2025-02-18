@@ -1,17 +1,43 @@
 -- Your Neovim plugins are managed via git submodules
 -- Plugin configurations are set directly in init.lua
 
--- Check and build coc.nvim if needed
-local function ensure_coc_nvim_built()
-  local coc_build_file = vim.fn.stdpath("config") .. "/pack/plugins/start/coc.nvim/build/index.js"
-  if vim.fn.empty(vim.fn.glob(coc_build_file)) > 0 then
-    vim.notify("Building coc.nvim...", vim.log.levels.INFO)
-    vim.fn.system("cd " .. vim.fn.stdpath("config") .. "/pack/plugins/start/coc.nvim && npm ci")
-    vim.notify("coc.nvim built successfully!", vim.log.levels.INFO)
+-- Plugin build system
+local function build_plugin(plugin_name)
+  local plugin_path = vim.fn.stdpath("config") .. "/pack/plugins/start/" .. plugin_name
+  
+  -- Plugin-specific build commands
+  local build_commands = {
+    ["coc.nvim"] = function()
+      local build_file = plugin_path .. "/build/index.js"
+      if vim.fn.empty(vim.fn.glob(build_file)) > 0 then
+        vim.notify("Building " .. plugin_name .. "...", vim.log.levels.INFO)
+        vim.fn.system("cd " .. plugin_path .. " && npm ci")
+        vim.notify(plugin_name .. " built successfully!", vim.log.levels.INFO)
+      end
+    end,
+    -- Add more plugins and their build commands here as needed
+    -- ["example-plugin"] = function() ... end,
+  }
+
+  -- Execute build command if it exists for the plugin
+  if build_commands[plugin_name] then
+    build_commands[plugin_name]()
   end
 end
 
-ensure_coc_nvim_built()
+-- Scan and build all plugins in start directory
+local function build_all_plugins()
+  local start_path = vim.fn.stdpath("config") .. "/pack/plugins/start"
+  local plugins = vim.fn.glob(start_path .. "/*", 0, 1)
+  
+  for _, plugin_path in ipairs(plugins) do
+    local plugin_name = vim.fn.fnamemodify(plugin_path, ":t")
+    build_plugin(plugin_name)
+  end
+end
+
+-- Build plugins on startup
+build_all_plugins()
 
 -- Basic vim options
 vim.opt.number = true
