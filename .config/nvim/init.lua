@@ -109,6 +109,9 @@ require('nvim-treesitter.configs').setup({
 -- Build plugins on startup
 build_all_plugins()
 
+-- Colorscheme
+vim.cmd[[colorscheme onedark]]
+
 -- Basic vim options
 vim.opt.number = true
 vim.opt.relativenumber = true
