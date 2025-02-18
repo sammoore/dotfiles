@@ -30,6 +30,12 @@
 !.config/
 .config/*
 !.config/nvim/
+!.config/nvim/pack/
+!.config/nvim/pack/plugins/
+!.config/nvim/pack/plugins/start/
+!.config/nvim/pack/plugins/start/telescope.nvim/
+!.config/nvim/pack/plugins/start/plenary.nvim/
+!.config/nvim/pack/plugins/start/nvim-web-devicons/
 
 !.vimrc
 !.vim/
