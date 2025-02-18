@@ -17,5 +17,8 @@
       }
     }
   },
-  "tsserver.useLocalTsdk": true
+  "tsserver.useLocalTsdk": true,
+  "pyright.inlayHints.functionReturnTypes": false,
+  "pyright.inlayHints.variableTypes": false,
+  "pyright.inlayHints.parameterTypes": false
 }
