@@ -74,6 +74,9 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 
+-- Status line configuration
+vim.opt.statusline = vim.opt.statusline + "%{coc#status()}%{get(b:,'coc_current_function','')}"
+
 -- Example plugin configurations
 
 -- NERDTree configuration
@@ -100,6 +103,16 @@ vim.keymap.set("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]
 
 -- Make <CR> auto-select the first completion item
 vim.keymap.set("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
+
+-- Diagnostic navigation
+vim.keymap.set("n", "g[", "<Plug>(coc-diagnostic-prev)", {silent = true})
+vim.keymap.set("n", "g]", "<Plug>(coc-diagnostic-next)", {silent = true})
+
+-- GoTo code navigation
+vim.keymap.set("n", "gd", "<Plug>(coc-definition)", {silent = true})
+vim.keymap.set("n", "gy", "<Plug>(coc-type-definition)", {silent = true})
+vim.keymap.set("n", "gI", "<Plug>(coc-implementation)", {silent = true})
+vim.keymap.set("n", "gA", "<Plug>(coc-references)", {silent = true})
 
 -- Use K to show documentation in preview window
 function _G.show_docs()
