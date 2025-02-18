@@ -1,3 +1,7 @@
+-- Set leader key before any other keymaps
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- Your Neovim plugins are managed via git submodules
 -- Plugin configurations are set directly in init.lua
 
@@ -66,9 +70,6 @@ end
 
 -- Build plugins on startup
 build_all_plugins()
-
--- Set leader key
-vim.g.mapleader = " "
 
 -- Basic vim options
 vim.opt.number = true
