@@ -67,6 +67,9 @@ end
 -- Build plugins on startup
 build_all_plugins()
 
+-- Set leader key
+vim.g.mapleader = " "
+
 -- Basic vim options
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -76,6 +79,26 @@ vim.opt.tabstop = 2
 
 -- Status line configuration
 vim.opt.statusline = vim.opt.statusline + "%{coc#status()}%{get(b:,'coc_current_function','')}"
+
+-- Telescope configuration
+require('telescope').setup{
+  defaults = {
+    file_ignore_patterns = {
+      "node_modules",
+      "build",
+      "dist",
+      "%.d.ts",
+      "%.js.map",
+      "%.js"
+    }
+  }
+}
+
+-- Telescope keymaps
+vim.keymap.set('n', '<leader>t', require('telescope.builtin').find_files, { desc = 'Find files' })
+vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = 'Live grep' })
+vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = 'Find buffers' })
+vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = 'Help tags' })
 
 -- Example plugin configurations
 
