@@ -125,6 +125,6 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 ## rust/cargo packages
-[[ -f ~/.cargo/env ]] && source "~/.cargo/env"
+[[ -f "$HOME/.cargo/env" ]] && source "~/.cargo/env"
 
 export EDITOR="$(which vim)"
