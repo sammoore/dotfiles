@@ -111,7 +111,7 @@ build_all_plugins()
 
 -- Colorscheme
 require('onedark').setup {
-    style = 'deeper'
+    style = 'deep'
 }
 require('onedark').load()
 
