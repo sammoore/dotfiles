@@ -161,6 +161,9 @@ vim.g.coc_global_extensions = {
   'coc-prettier'
 }
 
+-- Disable inlay hints
+vim.g.coc_preferences_inlayHint = false
+
 -- Use tab for trigger completion with characters ahead and navigate
 -- Make check_back_space available globally for v:lua
 function _G.check_back_space()
