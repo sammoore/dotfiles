@@ -148,7 +148,8 @@ vim.g.coc_global_extensions = {
 }
 
 -- Use tab for trigger completion with characters ahead and navigate
-local function check_back_space()
+-- Make check_back_space available globally for v:lua
+function _G.check_back_space()
   local col = vim.fn.col('.') - 1
   return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
 end
