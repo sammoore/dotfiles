@@ -123,6 +123,20 @@ vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.showtabline = 2
 
+-- Configure external terminal for shell commands
+vim.o.shell = 'zsh'
+vim.api.nvim_create_autocmd('CmdlineEnter', {
+  pattern = '*',
+  callback = function()
+    -- Use external terminal for ! commands
+    if vim.fn.getcmdtype() == '!' then
+      vim.o.shellpipe = '2>&1 | tee'
+      vim.o.shellredir = '>%s 2>&1'
+      vim.o.shellcmdflag = '-ic'
+    end
+  end
+})
+
 -- Status line configuration
 vim.opt.statusline = vim.opt.statusline + "%{coc#status()}%{get(b:,'coc_current_function','')}"
 
