@@ -149,6 +149,9 @@ vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc
 -- Clear search highlighting with \d
 vim.keymap.set('n', '\\d', ':nohlsearch<CR>', { silent = true })
 
+-- Show current file path relative to working directory
+vim.keymap.set('n', '\\p', ':echo expand('%')<CR>', { silent = false })
+
 -- Example plugin configurations
 
 -- NERDTree configuration
