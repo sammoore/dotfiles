@@ -147,6 +147,9 @@ vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = 'Find buffers' })
 vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = 'Help tags' })
 
+-- Clear search highlighting with \d
+vim.keymap.set('n', '\\d', ':nohlsearch<CR>', { silent = true })
+
 -- Example plugin configurations
 
 -- NERDTree configuration
