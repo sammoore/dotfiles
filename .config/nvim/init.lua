@@ -150,7 +150,7 @@ vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc
 vim.keymap.set('n', '\\d', ':nohlsearch<CR>', { silent = true })
 
 -- Show current file path relative to working directory
-vim.keymap.set('n', '\\p', ':echo expand('%')<CR>', { silent = false })
+vim.keymap.set('n', '\\p', ":echo expand('%')<CR>", { silent = false })
 
 -- Example plugin configurations
 
