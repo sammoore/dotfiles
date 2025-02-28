@@ -137,7 +137,7 @@ vim.api.nvim_create_autocmd('CmdlineEnter', {
 })
 
 -- Status line configuration
-vim.opt.statusline = vim.opt.statusline + "%{coc#status()}%{get(b:,'coc_current_function','')}"
+vim.opt.statusline = "%f %h%w%m%r %=%{coc#status()}%{get(b:,'coc_current_function','')} %-14.(%l,%c%V%) %P"
 
 
 -- Telescope keymaps
