@@ -157,6 +157,8 @@ vim.keymap.set('n', '\\p', ":echo expand('%')<CR>", { silent = false })
 -- NERDTree configuration
 vim.g.NERDTreeShowHidden = 1
 vim.g.NERDTreeMinimalUI = 1
+vim.g.NERDTreeRespectWildIgnore = 1
+vim.opt.wildignore:append({'*.git', '*.hg', '*.svn', 'node_modules', '.DS_Store'})
 vim.keymap.set('n', '<C-n>', ':NERDTreeToggle<CR>', { silent = true })
 
 -- CoC configuration
