@@ -140,6 +140,21 @@ vim.api.nvim_create_autocmd('CmdlineEnter', {
 vim.opt.statusline = vim.opt.statusline + "%f %h%w%m%r %=%{coc#status()}%{get(b:,'coc_current_function','')} %-14.(%l,%c%V%) %P"
 
 
+-- Telescope configuration
+require('telescope').setup({
+  defaults = {
+    file_ignore_patterns = {
+      "node_modules",
+      ".git/",
+    },
+  },
+  pickers = {
+    find_files = {
+      hidden = true
+    }
+  }
+})
+
 -- Telescope keymaps
 vim.keymap.set('n', '<leader>t', require('telescope.builtin').find_files, { desc = 'Find files' })
 vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = 'Live grep' })
