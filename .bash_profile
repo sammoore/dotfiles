@@ -45,6 +45,13 @@ else
 			export PATH="$HOME/Library/Python/3.11/bin:$PATH"
 		fi
 
+		if [ -d /opt/homebrew/opt/ruby ]; then
+                        #export PATH="/opt/homebrew/lib/ruby/gems/3.4.0/bin:$PATH"
+                        export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+                        export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+                        export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+		fi
+
 		if [ -d /usr/local/opt/openjdk@11 ]; then
 			export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
 			export JAVA_HOME="$(/usr/libexec/java_home -v 11)"
