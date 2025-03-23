@@ -36,6 +36,7 @@ local function build_plugin(plugin_name)
       local current_hash = get_git_hash(plugin_path)
       local last_built_hash = state[plugin_name] and state[plugin_name].last_built_hash or ""
       
+      -- support using non-release branches of coc.nvim -- build the source files
       if current_hash ~= last_built_hash then
         vim.notify("Building " .. plugin_name .. "...", vim.log.levels.INFO)
         vim.fn.system("cd " .. plugin_path .. " && npm ci")
@@ -146,6 +147,7 @@ require('telescope').setup({
     file_ignore_patterns = {
       "node_modules",
       ".git/",
+      ".venv/",
     },
   },
   pickers = {
