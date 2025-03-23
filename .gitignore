@@ -41,6 +41,8 @@
 !.config/nvim/pack/plugins/start/telescope.nvim
 !.config/nvim/pack/plugins/start/plenary.nvim
 !.config/nvim/pack/plugins/start/nvim-web-devicons
+!.config/nvim/pack/plugins/start/nvim-treesitter
+!.config/nvim/pack/plugins/start/onedark.nvim
 
 !.vimrc
 !.vim/
