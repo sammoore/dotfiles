@@ -124,6 +124,9 @@ export PATH="$HOME/bin:$PATH"
 # python user packages
 export PATH="$HOME/.local/bin:$PATH"
 
+## GOPATH from asdf
+[[ -f "$HOME/.asdf/plugins/golang/set-env.bash" ]] && source "$HOME/.asdf/plugins/golang/set-env.bash"
+
 ## rust/cargo packages
 [[ -f "$HOME/.cargo/env" ]] && source "~/.cargo/env"
 
