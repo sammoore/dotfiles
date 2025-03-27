@@ -67,3 +67,6 @@
 [submodule ".config/nvim/pack/plugins/start/onedark.nvim"]
 	path = .config/nvim/pack/plugins/start/onedark.nvim
 	url = https://github.com/navarasu/onedark.nvim.git
+[submodule ".config/nvim/pack/plugins/start/telescope-fzy-native.nvim"]
+	path = .config/nvim/pack/plugins/start/telescope-fzy-native.nvim
+	url = https://github.com/nvim-telescope/telescope-fzy-native.nvim.git

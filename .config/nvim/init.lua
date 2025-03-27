@@ -148,7 +148,17 @@ require('telescope').setup({
       "node_modules",
       ".git/",
       ".venv/",
+      "images/",
+      "build/",
+      -- expo
+      "ios/",
+      "android/",
+      ".expo/",
+      -- bundler
+      "bundle/",
+      "vendor/bundle/ruby/*",
     },
+    --preview = false,
   },
   pickers = {
     find_files = {
@@ -156,6 +166,7 @@ require('telescope').setup({
     }
   }
 })
+require('telescope').load_extension('fzy_native')
 
 -- Telescope keymaps
 vim.keymap.set('n', '<leader>t', require('telescope.builtin').find_files, { desc = 'Find files' })

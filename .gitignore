@@ -39,6 +39,7 @@
 !.config/nvim/pack/plugins/start/
 .config/nvim/pack/plugins/start/*
 !.config/nvim/pack/plugins/start/telescope.nvim
+!.config/nvim/pack/plugins/start/telescope-fzy-native.nvim
 !.config/nvim/pack/plugins/start/plenary.nvim
 !.config/nvim/pack/plugins/start/nvim-web-devicons
 !.config/nvim/pack/plugins/start/nvim-treesitter
