@@ -62,6 +62,16 @@ else
 			export JAVA_HOME="$(/usr/libexec/java_home -v 17)"
 		fi
 
+    if [ -d /Library/Java/JavaVirtualMachines/zulu-17.jdk ]; then
+      export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
+    fi
+
+    if [ -d /Users/sammoore/Library/Android/sdk ]; then
+      export ANDROID_HOME="/Users/sammoore/Library/Android/sdk"
+      export PATH="$PATH:$ANDROID_HOME/emulator"
+      export PATH="$PATH:$ANDROID_HOME/platform-tools"
+    fi
+
 		# macports; if present it should supercede the prior homebrew setup
 		if command -v /opt/local/bin/port &>/dev/null; then
 			export PATH="/opt/local/bin:/opt/local/sbin:$PATH"

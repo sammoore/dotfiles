@@ -102,3 +102,7 @@ if [ -d "$HOME/.local/share/pnpm" ]; then
 	esac
 fi
 # pnpm end
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
