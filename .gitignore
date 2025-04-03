@@ -44,6 +44,7 @@
 !.config/nvim/pack/plugins/start/nvim-web-devicons
 !.config/nvim/pack/plugins/start/nvim-treesitter
 !.config/nvim/pack/plugins/start/onedark.nvim
+!.config/nvim/pack/plugins/start/aider.nvim
 
 !.vimrc
 !.vim/
