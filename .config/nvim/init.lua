@@ -148,7 +148,6 @@ require('telescope').setup({
       "node_modules",
       ".git/",
       ".venv/",
-      "images/",
       "build/",
       -- expo
       "ios/",
